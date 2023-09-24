@@ -1,4 +1,5 @@
 import React from "react";
+import Gun from "gun";
 import { Widget } from "../components/Widget";
 import {
   deepCopy,
@@ -185,6 +186,7 @@ const ApprovedTagsCustom = {
   Files: true,
   iframe: false,
   Web3Connect: false,
+  Gun: true,
 };
 
 // will be dynamically indexed into for fetching specific elements
@@ -1199,8 +1201,8 @@ class VmStack {
           if (!options?.callee) {
             throw new Error(
               "Cannot dereference keyword '" +
-                keyword +
-                "' in non-call expression"
+              keyword +
+              "' in non-call expression"
             );
           }
           return {
@@ -1757,10 +1759,10 @@ class VmStack {
             deepCopy(
               e instanceof Error
                 ? {
-                    name: e?.name,
-                    message: e?.message,
-                    toString: () => e.toString(),
-                  }
+                  name: e?.name,
+                  message: e?.message,
+                  toString: () => e.toString(),
+                }
                 : e
             )
           );
@@ -1855,24 +1857,24 @@ export default class VM {
 
     this.setReactState = setReactState
       ? (s) =>
-          setReactState({
-            hooks: this.hooks,
-            state: isObject(s) ? Object.assign({}, s) : s,
-          })
+        setReactState({
+          hooks: this.hooks,
+          state: isObject(s) ? Object.assign({}, s) : s,
+        })
       : () => {
-          throw new Error("State is unavailable for modules");
-        };
+        throw new Error("State is unavailable for modules");
+      };
     this.setReactHook = setReactState
       ? (i, v) => {
-          this.hooks[i] = v;
-          setReactState({
-            hooks: this.hooks,
-            state: this.state.state,
-          });
-        }
+        this.hooks[i] = v;
+        setReactState({
+          hooks: this.hooks,
+          state: this.state.state,
+        });
+      }
       : () => {
-          throw new Error("State is unavailable for modules");
-        };
+        throw new Error("State is unavailable for modules");
+      };
     this.cache = cache;
     this.refreshCache = refreshCache;
     this.confirmTransactions = confirmTransactions;

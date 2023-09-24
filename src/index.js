@@ -6,8 +6,6 @@ import { useCache } from "./lib/data/cache";
 import * as utils from "./lib/data/utils";
 import { CommitButton } from "./lib/components/Commit";
 import { EthersProviderContext } from "./lib/components/ethers";
-import Gun from "gun";
-
 
 export {
   Widget,
@@ -18,6 +16,5 @@ export {
   useAccount,
   useAccountId,
   utils,
-  EthersProviderContext,
-  Gun
+  EthersProviderContext
 };
