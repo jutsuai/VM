@@ -63,6 +63,8 @@ import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import * as Toolbar from "@radix-ui/react-toolbar";
 import * as RadixTooltip from "@radix-ui/react-tooltip";
 
+import Gun from "gun";
+
 const frozenNacl = Object.freeze({
   randomBytes: deepFreeze(nacl.randomBytes),
   secretbox: deepFreeze(nacl.secretbox),
@@ -184,7 +186,8 @@ const ApprovedTagsCustom = {
   OverlayTrigger: true,
   Files: true,
   iframe: false,
-  Web3Connect: false
+  Web3Connect: false,
+  Gun: false
 };
 
 // will be dynamically indexed into for fetching specific elements

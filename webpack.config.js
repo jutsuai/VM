@@ -36,6 +36,7 @@ module.exports = function (env) {
         },
       ],
       module: {
+        noParse: /gun\.js$/,
         rules: [
           {
             test: /\.m?js/,
