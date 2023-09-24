@@ -186,7 +186,7 @@ const ApprovedTagsCustom = {
   Files: true,
   iframe: false,
   Web3Connect: false,
-  Gun: true,
+  Gun: false,
 };
 
 // will be dynamically indexed into for fetching specific elements
