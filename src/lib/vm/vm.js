@@ -1,5 +1,4 @@
 import React from "react";
-import Gun from "gun";
 import { Widget } from "../components/Widget";
 import {
   deepCopy,
@@ -185,8 +184,7 @@ const ApprovedTagsCustom = {
   OverlayTrigger: true,
   Files: true,
   iframe: false,
-  Web3Connect: false,
-  Gun: false,
+  Web3Connect: false
 };
 
 // will be dynamically indexed into for fetching specific elements
