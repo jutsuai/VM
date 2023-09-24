@@ -1,5 +1,5 @@
 import React from "react";
-import Gun from "gun/gun";
+import Gun from "gun";
 import { Widget } from "../components/Widget";
 import {
   deepCopy,
